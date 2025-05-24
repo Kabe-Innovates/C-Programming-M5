@@ -150,11 +150,20 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 
 ## ALGORITHM:
 
-1.	Input the number of rows for the pyramid (e.g., num_rows).
-2.	Initialize variables:i for the row count (starting from 1),j for the character count (starting from 1)
-3.	Start a loop for i from 1 to num_rows (for each row of the pyramid).
-4.	Calculate the midpoint position as midpoint = (2 * num_rows - 1) / 2.
-5.	End the program.
+## Algorithm
+
+1. Input the string and the number of rows for the pyramid.
+2. Initialize variables:
+   - `i` for the row count (starting from 0).
+   - `j` for printing the string in each row.
+   - `k` for printing spaces for alignment.
+3. Start a loop for `i` from `0` to `rows - 1` (for each row of the pyramid):
+   - Print leading spaces to center the pyramid (`rows - i - 1` spaces).
+   - Start an inner loop for `j` from `0` to `i`:
+     - Print the string followed by a space.
+   - Move to the next line.
+4. End the program.
+
 
 ## PROGRAM:
 ```c
@@ -169,6 +178,9 @@ int main() {
     scanf("%d", &rows);
 
     for (int i = 0; i < rows; i++) {
+        for (int k = 0; k < rows - i - 1; k++) {
+            printf("  ");
+        }
         for (int j = 0; j <= i; j++) {
             printf("%s ", str);
         }
@@ -177,10 +189,11 @@ int main() {
 
     return 0;
 }
+
 ```
 
  ## OUTPUT
-![image](https://github.com/user-attachments/assets/bf4f1575-796f-4d19-b6d1-e973d26161bc)
+![image](https://github.com/user-attachments/assets/9290a727-73b3-4951-b3c9-142aa77664d2)
 
  
 
